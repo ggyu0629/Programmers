@@ -1,0 +1,55 @@
+class Solution {
+    public String solution(String new_id) {
+
+        String answer = "";
+        //1--------
+        String s = new_id.toLowerCase(); 
+        char[] arr = s.toCharArray();
+        String s2 = "";
+        //2---------
+        for(char c : arr){
+            if((c >= 'a' && c<='z') || (c>= '0' && c<='9') || c == '-'||c=='_'||c=='.')
+                s2 = s2 + c;
+        }
+        //3--------
+        String s3 = s2.toString().replace("..",".");
+        while(s3.contains(".."))
+            s3 = s3.replace("..",".");
+        
+        //4---------
+        if(s3.length()>0){
+            if(s3.charAt(0) == '.')
+                s3 = s3.substring(1,s3.length());
+        }
+        
+        if(s3.length()>0){
+            if(s3.charAt(s3.length()-1) == '.')
+                s3 = s3.substring(0,s3.length()-1);
+        }
+        
+        //5--------
+        String s5 = s3;
+        if(s5.equals(""))
+            s5 = s5 + 'a';
+        
+        //6----------
+        if(s5.length()>=16){
+            s5 = s5.substring(0,15);
+            
+            if(s5.charAt(s5.length()-1) == '.'){
+                s5 = s5.substring(0,s5.length()-1);
+            }
+        }
+        //7--------------
+        if(s5.length()<=2){
+            char last = s5.charAt(s5.length() -1);
+            
+            while(s5.length()<3)
+                s5 = s5 + last;
+        }
+        answer = s5;
+        
+        
+        return answer;
+    }
+}
