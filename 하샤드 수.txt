@@ -1,0 +1,17 @@
+class Solution {
+    public boolean solution(int x) {
+        boolean answer ;
+        int a =x;
+        int s = 0;
+        while(a>=1){
+            s  = s + (a % 10);
+            a/=10;
+        }
+        if(x % s == 0)
+            answer = true;
+        else
+            answer = false;
+        
+        return answer;
+    }
+}
