@@ -1,0 +1,61 @@
+import java.util.*;
+class Solution {
+    public int solution(String s) {
+        String answer = "";
+        String a = "";
+        
+        for(int i = 0;i<s.length();i++){
+            char ch = s.charAt(i);
+            if(Character.isDigit(ch)){
+                answer+= ch;
+            }else{
+                a+=ch;
+            }
+            
+            switch(a){
+                case "zero":
+                    answer+=0;
+                    a = "";
+                    break;
+                case "one":
+                    answer+="1";
+                    a = "";
+                    break;
+                case "two":
+                    answer+="2";
+                    a = "";
+                    break;
+                case "three":
+                    answer+="3";
+                    a = "";
+                    break;
+                case "four":
+                    answer+="4";
+                    a = "";
+                    break;
+                case "five":
+                    answer+="5";
+                    a = "";
+                    break;
+                case "six":
+                    answer+="6";
+                    a = "";
+                    break;
+                case "seven":
+                    answer+="7";
+                    a = "";
+                    break;
+                case "eight":
+                    answer+="8";
+                    a = "";
+                    break;
+                case "nine":
+                    answer+="9";
+                    a = "";
+                    break;
+            }
+        }
+
+        return Integer.parseInt(answer);
+    }
+}
